@@ -1,0 +1,50 @@
+<!-- pages/templates/pages/game.html -->
+{% load static %}
+
+<link rel="stylesheet" href = "{% static 'pages/style.css' %}">
+<style>
+    body {
+        background-color: #00C2EB;
+    }
+
+    .button {
+        border: none;
+        color: white;
+        text-align: center;
+        font-size: 18px;
+        cursor: pointer;
+        margin: 4px 2px;
+        padding: 15px 32px;
+        border-radius: 12px;
+    }
+
+    .buybutton {
+        background-color: #038819;
+    }
+
+    .sellbutton {
+        background-color: #CE2C2C;
+    }
+
+    .skipbutton {
+        background-color: #FFA336;
+    }
+
+    .turnOptions {
+        text-align: left;
+    }
+
+    h1 {
+        text-align: center;
+    }
+</style>
+
+<h1>Game</h1>
+
+<body style = "background-color: #00C2EB">Click <a href = "/">here</a> to go back to the home page.</body>
+
+<div class="turnOptions">
+    <button class = "button buybutton" type="button">Buy</button>
+    <button class = "button sellbutton" type="button">Sell</button>
+    <button class = "button skipbutton" type="button">Skip</button>
+</div>
