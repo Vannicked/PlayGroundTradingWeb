@@ -1,9 +1,15 @@
 <!-- pages/templates/pages/home.html -->
+{% load static %}
 
 <link rel="stylesheet" href = "{% static 'pages/style.css' %}">
 
 <h1>PlayGround Trading</h1>
 
-<body>Here is where the user will be greeted by the primary information about the site as well as the navigation options around the site</body>
+<div class="topnav">
+    <a class="active" href = "/">Home</a>
+    <a href = "/game">Game</a>
+    <a href = "/education">Education</a>
+    <a href = "/about">About Us</a>
+</div>
 
-<body>Click <a href = "/game">here</a> to go to the game page</body>
+<body>Here is where the user will be greeted by the primary information about the site as well as the navigation options around the site</body>

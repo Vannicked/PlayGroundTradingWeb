@@ -5,3 +5,9 @@ def home(request):
 
 def game(request):
     return render(request, "pages/game.html", {})
+
+def education(request):
+    return render(request, "pages/education.html", {})
+
+def about(request):
+    return render(request, "pages/about.html", {})
