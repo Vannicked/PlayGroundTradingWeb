@@ -8,6 +8,7 @@ h1 {
     color: white;
     font-family: Arial Rounded MT Bold,Helvetica Rounded,Arial,sans-serif;
     text-align: center;
+    font-size: 72px;
 }
 
 button {
@@ -35,4 +36,22 @@ button {
 
 .turnOptions {
     text-align: left;
+}
+
+a{
+    text-decoration: none;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.pages {
+    float: left;
+    padding: 30px;
+}
+
+.topnav {
+    text-align: center;
 }
