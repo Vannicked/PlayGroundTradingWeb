@@ -11,6 +11,30 @@ h1 {
     font-size: 72px;
 }
 
+a{
+    text-decoration: none;
+    color: white;
+}
+
+a:visited {
+    text-decoration: none;
+    color: white;
+}
+
+.pages {
+    float: left;
+    padding-top: 30px;
+    font-size: 24px;
+}
+
+.topnav {
+    text-align: center;
+}
+
+.marketScreen {
+    border: 10px 10px brown;
+}
+
 button {
     border: none;
     color: white;
@@ -37,26 +61,6 @@ button {
 
 .turnOptions {
     text-align: left;
-    position: absolute;
+    position: fixed;
     bottom: 30;
-}
-
-a{
-    text-decoration: none;
-    color: white;
-}
-
-a:visited {
-    text-decoration: none;
-    color: white;
-}
-
-.pages {
-    float: left;
-    padding-top: 30px;
-    font-size: 24px;
-}
-
-.topnav {
-    text-align: center;
 }
