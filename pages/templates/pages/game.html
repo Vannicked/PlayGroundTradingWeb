@@ -3,6 +3,10 @@
 
 <link rel="stylesheet" href = "{% static 'pages/style.css' %}">
 
+<head>
+    <script src="{% static 'pages/functions.js' %}"></script>
+</head>
+
 <div class="topnav">
     <div class = "pages" style="text-align: left;">
         <a href = "/game" style="padding-left: 50px;">Game</a>
@@ -21,8 +25,6 @@
         <button class = "button buybutton" type="button" onclick="buy()">Buy</button>
         <button class = "button sellbutton" type="button" onclick="sell()">Sell</button>
         <button class = "button skipbutton" type="button" onclick="skip()">Skip</button>
-
-        <script src="{% static 'pages/functions.js' %}"></script>
     </div>
 
     <form action="/game/" method="post" style="position: absolute; right: 100;">
