@@ -11,3 +11,224 @@
     </div>
         <a href="/" style="font-size: 72px; text-align: center; padding-right: 525px;">Playground Trading</a>
 </div>
+<title> Education </title>
+    <style>
+        .accordion {
+            background-color: #f1f1f1;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+            .accordion:hover {
+                background-color: #ddd;
+            }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+            .active:after {
+                content: "\2212";
+            }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color:#038819;
+            overflow: hidden;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Choose a Broker </h1>
+</body>
+<body>
+    <a href="https://robinhood.com/">
+        <button style="width: 200px; height: 60px; background-color: #038819; color: white">Roobinhood</button>
+    </a>
+    <a href="https://www.webull.com/">
+        <button style="width: 200px; height: 60px; background-color: #038819; color: white"> Webull</button>
+    </a>
+    <a href="https://www.fidelity.com/">
+        <button style="width: 200px; height: 60px; background-color: #038819; color: white">Fidelity</button>
+    </a>
+    <a href="https://www.tdameritrade.com/">
+        <button style="width: 200px; height: 60px; background-color: #038819; color: white">TD Ameritrade</button>
+    </a>
+    <a href="https://www.schwab.com/">
+        <button style="width: 200px; height: 60px; background-color: #038819; color: white">Charles Schwab</button>
+    </a>
+
+</body>
+
+<br> 
+<br>
+<br>
+
+<body>
+    <h1>Get Educated </h1>
+    <button class="accordion">Stocks (Equities)</button>
+    <div class="panel">
+        <p> Stocks are like owning a tiny piece of a company. When you buy a stock, you become a partial owner, and you might get some money back if the company does well.</p>
+    </div>
+
+    <button class="accordion">Bonds</button>
+    <div class="panel">
+        <p>Bonds are a bit like lending money. When you buy a bond, you're giving a loan to a company or a government. They promise to pay you back the loan amount (principal) with a little extra (interest) over time.</p>
+    </div>
+
+    <button class="accordion">ETFs (Exchange-Traded Funds)</button>
+    <div class="panel">
+        <p>ETFs are like a collection of different things, such as stocks or bonds, bundled together. It's like buying a variety pack that helps you invest in many things at once.</p>
+    </div>
+
+    <button class="accordion">Mutual Funds</button>
+    <div class="panel">
+        <p>Mutual funds are a way for many people to put their money together to invest in lots of different things, like stocks and bonds. Professionals manage these funds to help them grow.</p>
+    </div>
+
+    <button class="accordion">Futures</button>
+    <div class="panel">
+        <p>Futures are like making a deal today to buy or sell something in the future at a set price. It's a bit like agreeing to buy a video game when it comes out, but at today's price.</p>
+    </div>
+
+    <button class="accordion">Options</button>
+    <div class="panel">
+        <p> Options are a bit like having a special ticket that lets you choose to buy or sell something in the future. It's a choice, not a must-do. It's like getting the option to buy a concert ticket later if you decide you want it.</p>
+    </div>
+
+    <button class="accordion">Trading Vs Investing</button>
+    <div class="panel">
+        <p> Trading is like buying and selling concert tickets quickly for short-term profit. Investing is like buying a season pass for a concert series, aiming for long-term growth.</p>
+    </div>
+    <script>
+        // Get all elements with class "accordion"
+        var acc = document.getElementsByClassName("accordion");
+
+        for (var i = 0; i < acc.length; i++) {
+            acc[i].addEventListener("click", function() {
+                this.classList.toggle("active");
+                var panel = this.nextElementSibling;
+                if (panel.style.display === "block") {
+                    panel.style.display = "none";
+                } else {
+                    panel.style.display = "block";
+                }
+            });
+        }
+    </script>
+
+    <br> 
+    <br>
+    <br>
+
+    <body>
+        <h1>Social Media Influencers </h1>
+    </body>
+    <body>
+        <a href="https://www.instagram.com/aristotle_investments/">
+            <button style="width: 225px; height: 60px; background-color: green; color: white">aristotle_investments</button>
+        </a>
+        <a href="https://www.instagram.com/kashwill__/">
+            <button style="width: 200px; height: 60px; background-color: yellowgreen; color: white"> kashwill__</button>
+        </a>
+        <a href="https://www.instagram.com/nourtrades/">
+            <button style="width: 200px; height: 60px; background-color: green; color: white">nourtrades</button>
+        </a>
+        <a href="https://www.instagram.com/joovier_">
+            <button style="width: 200px; height: 60px; background-color: yellowgreen; color: white">joovier_</button>
+        </a>
+        <a href="https://www.instagram.com/relentlesstrader/">
+            <button style="width: 200px; height: 60px; background-color: green; color: white">relentlesstrader</button>
+        </a>
+
+    <br> 
+    <br>
+    <br>
+    <br> 
+    <br>
+    <br>
+
+    <head>
+        <h1>Updated Top News </h1>
+        <style>
+            .news-story {
+                display: none;
+            }
+            .news-story:first-child {
+                display: block;
+            }
+            img {
+                width: 100%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div>
+            <p id="story-text"></p>
+            <img id="story-image" src="images" alt="News">
+        </div>
+        <button id="prev">Previous</button>
+        <button id="next">Next</button>
+    
+        <script>
+            const stories = [
+                {
+                    text: "In the market update, Meta and Amazon reported strong earnings, boosting their combined market value by $280 billion. This positive news contrasted with the underperformance of other major tech companies, the Magnificent Seven. The market mood is jittery due to unexpected losses in the banking sector. Bank earnings from Caixabank, Deutsche, Danske, and UniCredit, along with U.S. labor market data, are anticipated. Traders are closely watching signs of softness in the labor market amidst recent adjustments in expectations for U.S. rate cuts. Key economic events for the day include French industrial production and U.S. payrolls.",
+                    image: ""
+                },
+                {
+                    text: "In the market update, Meta and Amazon reported strong earnings, boosting their combined market value by $280 billion. This positive news contrasted with the underperformance of other major tech companies, the Magnificent Seven. The market mood is jittery due to unexpected losses in the banking sector. Bank earnings from Caixabank, Deutsche, Danske, and UniCredit, along with U.S. labor market data, are anticipated. Traders are closely watching signs of softness in the labor market amidst recent adjustments in expectations for U.S. rate cuts. Key economic events for the day include French industrial production and U.S. payrolls.",
+                    image: " "
+                },
+                {
+                    text: "In the market update, Meta and Amazon reported strong earnings, boosting their combined market value by $280 billion. This positive news contrasted with the underperformance of other major tech companies, the Magnificent Seven. The market mood is jittery due to unexpected losses in the banking sector. Bank earnings from Caixabank, Deutsche, Danske, and UniCredit, along with U.S. labor market data, are anticipated. Traders are closely watching signs of softness in the labor market amidst recent adjustments in expectations for U.S. rate cuts. Key economic events for the day include French industrial production and U.S. payrolls..",
+                    image: ""
+                },
+                {
+                    text: "In the market update, Meta and Amazon reported strong earnings, boosting their combined market value by $280 billion. This positive news contrasted with the underperformance of other major tech companies, the Magnificent Seven. The market mood is jittery due to unexpected losses in the banking sector. Bank earnings from Caixabank, Deutsche, Danske, and UniCredit, along with U.S. labor market data, are anticipated. Traders are closely watching signs of softness in the labor market amidst recent adjustments in expectations for U.S. rate cuts. Key economic events for the day include French industrial production and U.S. payrolls..",
+                    image: ""
+                }
+            ];
+    
+            let currentStoryIndex = 0;
+            const storyTextElement = document.getElementById('story-text');
+            const storyImageElement = document.getElementById('story-image');
+    
+            function displayStory(index) {
+                storyTextElement.textContent = stories[index].text;
+                storyImageElement.src = stories[index].image;
+            }
+    
+            displayStory(currentStoryIndex);
+    
+            document.getElementById('prev').addEventListener('click', function() {
+                currentStoryIndex = (currentStoryIndex - 1 + stories.length) % stories.length;
+                displayStory(currentStoryIndex);
+            });
+    
+            document.getElementById('next').addEventListener('click', function() {
+                currentStoryIndex = (currentStoryIndex + 1) % stories.length;
+                displayStory(currentStoryIndex);
+            });
+        </script>
+    </body>
+    </html>
+    
