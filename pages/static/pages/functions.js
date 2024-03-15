@@ -1,25 +1,9 @@
 function buy(){
-    let stock = prompt("What stock do you want to buy?", "NVIDIA");
-    let text = "blank";
-    if (stock == null || stock == ""){
-        text = "No stock entered.";
-    }
-    else{
-        text = "You have purchased " + stock + ".";
-    }
-    console.log(text);
+    document.getElementById("buyStock").style.visibility = "visible";
 }
 
 function sell(){
-    let stock = prompt("What stock do you want to sell?", "NVIDIA");
-    let text = "blank";
-    if (stock == null || stock == ""){
-        text = "No stock entered.";
-    }
-    else{
-        text = "You have sold " + stock + ".";
-    }
-    console.log(text);
+    document.getElementById("sellStock").style.visibility = "visible";
 }
 
 function skip(){
