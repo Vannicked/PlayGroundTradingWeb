@@ -165,70 +165,139 @@
     <br>
     <br>
 
-    <head>
-        <h1>Updated Top News </h1>
-        <style>
-            .news-story {
-                display: none;
-            }
-            .news-story:first-child {
-                display: block;
-            }
-            img {
-                width: 100%;
-                height: auto;
-            }
-        </style>
+    <h1>PlayGround Trading Top News</h1>
+
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Image Boxes with Slider</title>
+      <style>
+        /* Basic styling for the boxes and button, feel free to customize */
+        .image-box {
+          width: 300px;
+          height: 300px;
+          border: 1px solid black;
+          margin: 10px;
+          position: relative;
+          float: left; /* Allow multiple boxes to fit side-by-side */
+        }
+    
+        .image-box img {
+          width: 100%;
+          height: 200px;
+          object-fit: cover; /* Ensure image fills the box properly */
+        }
+    
+        .description {
+          position: absolute;
+          bottom: 0;
+          width: 100%;
+          background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+          color: white;
+          padding: 10px;
+        }
+    
+        #image-container {
+          overflow: hidden; /* Hide  content for multiple boxes */
+        }
+    
+        #image-slider {
+          width: 100%; /* width */
+          margin-top: 10px; /* Spacing  */
+        }
+    
+        #image-slider input[type="range"] {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 100%;
+          height: 10px;
+          background: #d3d3d3;
+          outline: none;
+          opacity: 0.7;
+          -webkit-transition: .2s;
+          transition: .2s;
+        }
+    
+        #image-slider input[type="range"]:hover {
+          opacity: 1;
+        }
+    
+        #image-slider input[type="range"]::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          appearance: none;
+          width: 20px;
+          height: 20px;
+          background: #4CAF50;
+          cursor: pointer;
+        }
+      </style>
     </head>
     <body>
-        <div>
-            <p id="story-text"></p>
-            <img id="story-image" src="images" alt="News">
-        </div>
-        <button id="prev">Previous</button>
-        <button id="next">Next</button>
+      <div id="image-container">
+        <template id="image-box-template">
+          <div class="image-box">
+            <img src="" alt="">
+            <div class="description"></div>
+          </div>
+        </template>
     
         <script>
-            const stories = [
-                {
-                    text: "In the market update, Meta and Amazon reported strong earnings, boosting their combined market value by $280 billion. This positive news contrasted with the underperformance of other major tech companies, the Magnificent Seven. The market mood is jittery due to unexpected losses in the banking sector. Bank earnings from Caixabank, Deutsche, Danske, and UniCredit, along with U.S. labor market data, are anticipated. Traders are closely watching signs of softness in the labor market amidst recent adjustments in expectations for U.S. rate cuts. Key economic events for the day include French industrial production and U.S. payrolls.",
-                    image: ""
-                },
-                {
-                    text: "In the market update, Meta and Amazon reported strong earnings, boosting their combined market value by $280 billion. This positive news contrasted with the underperformance of other major tech companies, the Magnificent Seven. The market mood is jittery due to unexpected losses in the banking sector. Bank earnings from Caixabank, Deutsche, Danske, and UniCredit, along with U.S. labor market data, are anticipated. Traders are closely watching signs of softness in the labor market amidst recent adjustments in expectations for U.S. rate cuts. Key economic events for the day include French industrial production and U.S. payrolls.",
-                    image: " "
-                },
-                {
-                    text: "In the market update, Meta and Amazon reported strong earnings, boosting their combined market value by $280 billion. This positive news contrasted with the underperformance of other major tech companies, the Magnificent Seven. The market mood is jittery due to unexpected losses in the banking sector. Bank earnings from Caixabank, Deutsche, Danske, and UniCredit, along with U.S. labor market data, are anticipated. Traders are closely watching signs of softness in the labor market amidst recent adjustments in expectations for U.S. rate cuts. Key economic events for the day include French industrial production and U.S. payrolls..",
-                    image: ""
-                },
-                {
-                    text: "In the market update, Meta and Amazon reported strong earnings, boosting their combined market value by $280 billion. This positive news contrasted with the underperformance of other major tech companies, the Magnificent Seven. The market mood is jittery due to unexpected losses in the banking sector. Bank earnings from Caixabank, Deutsche, Danske, and UniCredit, along with U.S. labor market data, are anticipated. Traders are closely watching signs of softness in the labor market amidst recent adjustments in expectations for U.S. rate cuts. Key economic events for the day include French industrial production and U.S. payrolls..",
-                    image: ""
-                }
-            ];
+          const imageBoxTemplate = document.getElementById('image-box-template');
+          const imageContainer = document.getElementById('image-container');
     
-            let currentStoryIndex = 0;
-            const storyTextElement = document.getElementById('story-text');
-            const storyImageElement = document.getElementById('story-image');
+          const imageData = [
+            {
+              src: 'path/to/image1.jpg',
+              alt: 'Image 1 ',
+              description: 'Teslas Market Cap Tops $1 Trillion, Musk Becomes Worlds Richest Person'
+            },
+            {
+              src: 'path/to/image2.jpg', // Add more image data objects here
+              alt: 'Image 2 ',
+              description: 'Renewable Energy Stocks Rally on Government Subsidy Announcement'
+            },
+            {
+              src: 'path/to/image1.jpg',
+              alt: 'Image 3 ',
+              description: 'Gold Prices Surge Amid Safe-Haven Demand Amidst Uncertain Economic Outlook'
+            },
+            {
+              src: 'path/to/image1.jpg',
+              alt: 'Image 4 ',
+              description: 'Investors Brace for Earnings Season: Analysts Forecast Mixed Results'
+            },
+          ];
     
-            function displayStory(index) {
-                storyTextElement.textContent = stories[index].text;
-                storyImageElement.src = stories[index].image;
-            }
-    
-            displayStory(currentStoryIndex);
-    
-            document.getElementById('prev').addEventListener('click', function() {
-                currentStoryIndex = (currentStoryIndex - 1 + stories.length) % stories.length;
-                displayStory(currentStoryIndex);
-            });
-    
-            document.getElementById('next').addEventListener('click', function() {
-                currentStoryIndex = (currentStoryIndex + 1) % stories.length;
-                displayStory(currentStoryIndex);
-            });
+          imageData.forEach(imageData => {
+            const newImageBox = imageBoxTemplate.content.cloneNode(true);
+            newImageBox.querySelector('img').src = imageData.src;
+            newImageBox.querySelector('img').alt = imageData.alt;
+            newImageBox.querySelector('.description').textContent = imageData.description;
+            imageContainer.appendChild(newImageBox);
+          });
         </script>
+      </div>
+      
+      <div id="image-slider">
+        <input type="range" min="0" max="1" step="0.5" value="0">
+      </div>
+    
+      <script>
+        const imageBoxes = document.querySelectorAll('.image-box');
+        const slider = document.getElementById('image-slider').querySelector('input[type="range"]');
+    
+        let currentBox = 0;
+    
+        slider.addEventListener('input', () => {
+          currentBox = Math.round(slider.value * (imageBoxes.length - 1)); // Calculate index on slider value
+          imageBoxes.forEach((box, index) => {
+            if (index === currentBox) {
+              box.style.display = 'block';
+            } else {
+              box.style.display = 'none';
+            }
+          });
+        });
+      </script>
     </body>
     </html>
     
