@@ -18,7 +18,7 @@
     <div class="game">
     
         <div class="marketScreen">
-            <p style="position: absolute; top: 150; right: 200; background-color: green; height: 600px; width: 1500px; border-color: brown; border: 10px;">Here is the display for current stocks</p>
+            <p style="position: relative; top: 50; right: -30; background-color: green; height: 500px; width: 1000px; border-color: brown; border: 10px;">Here is the display for current stocks</p>
         </div>
     
         <div class="turnOptions">
@@ -27,13 +27,13 @@
             <button class = "button skipbutton" type="button" onclick="skip()">Skip</button>
         </div>
     
-        <form id="buyStock" action="/game/" method="post" style="position: absolute; right: 100; visibility: hidden;">
+        <form id="buyStock" action="/game/" method="post" style="position: relative; right: 100; visibility: hidden;">
             {% csrf_token %}
             {{ buying }}
             <input type="submit" value="Submit">
         </form>
     
-        <form id="sellStock" action="/game/" method="post" style="position: absolute; right: 100; visibility: hidden;">
+        <form id="sellStock" action="/game/" method="post" style="position: relative; right: 100; visibility: hidden;">
             {% csrf_token %}
             {{ selling }}
             <input type="submit" value="Submit">
