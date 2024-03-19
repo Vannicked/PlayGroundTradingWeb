@@ -1,0 +1,44 @@
+<!-- pages/templates/pages/game.html -->
+{% load static %}
+
+<link rel="stylesheet" href = "{% static 'pages/style.css' %}">
+
+<head>
+    <script src="{% static 'pages/functions.js' %}"></script>
+</head>
+
+<body>
+    <div class = "pages">
+        <a href="/" class="homeScreen">Playground Trading</a>
+        <a href = "/game" style="margin-right: 2%; margin-left: 2%; text-align: right;">Game</a>
+        <a href = "/education" style="margin-right: 2%; margin-left: 2%; text-align: right;">Education</a>
+        <a href = "/about" style="margin-right: 2%; margin-left: 2%; text-align: right;">About Us</a>
+    </div>
+    
+    <div class="game">
+    
+        <div class="marketScreen">
+            <p style="position: relative; top: 150; right: 200; background-color: green; height: 600px; width: 1500px; border-color: brown; border: 10px;">Here is the display for current stocks</p>
+        </div>
+    
+        <div class="turnOptions">
+            <button class = "button buybutton" type="button" onclick="buy()">Buy</button>
+            <button class = "button sellbutton" type="button" onclick="sell()">Sell</button>
+            <button class = "button skipbutton" type="button" onclick="skip()">Skip</button>
+        </div>
+    
+        <form id="buyStock" action="/game/" method="post" style="position: absolute; right: 100; visibility: hidden;">
+            {% csrf_token %}
+            {{ buying }}
+            <input type="submit" value="Submit">
+        </form>
+    
+        <form id="sellStock" action="/game/" method="post" style="position: absolute; right: 100; visibility: hidden;">
+            {% csrf_token %}
+            {{ selling }}
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+
+
