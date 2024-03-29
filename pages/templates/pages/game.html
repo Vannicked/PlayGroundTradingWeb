@@ -23,7 +23,15 @@
     
         <div class="turnOptions">
             <div class="buttons">
-                <button class = "buybutton" type="button" onclick="buy()">Buy</button>
+                <div class="buying">
+                    <button class = "buybutton" type="button" onclick="buy()">Buy</button>
+
+                    <form class = "buying" id="buyStock" action="/game/" method="post">
+                        {% csrf_token %}
+                        {{ buying }}
+                        <input type="submit" value="Submit">
+                    </form>
+                </div>
                 <button class = "sellbutton" type="button" onclick="sell()">Sell</button>
                 <button class = "skipbutton" type="button" onclick="skip()">Skip</button>
                 <button class = "portfolioButton" type="button" onclick="portfolio()">Portfolio</button>
@@ -32,12 +40,6 @@
             <form class = "selling" id="sellStock" action="/game/" method="post">
                 {% csrf_token %}
                 {{ selling }}
-                <input type="submit" value="Submit">
-            </form>
-
-            <form class = "buying" id="buyStock" action="/game/" method="post">
-                {% csrf_token %}
-                {{ buying }}
                 <input type="submit" value="Submit">
             </form>
         </div>
