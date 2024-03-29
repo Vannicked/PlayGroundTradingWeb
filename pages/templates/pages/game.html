@@ -18,26 +18,29 @@
     <div class="game">
     
         <div class="marketScreen">
-            <p style="position: relative; top: 150; right: 200; background-color: green; height: 600px; width: 1500px; border-color: brown; border: 10px;">Here is the display for current stocks</p>
+            <p>Here is the display for current stocks</p>
         </div>
     
         <div class="turnOptions">
-            <button class = "button buybutton" type="button" onclick="buy()">Buy</button>
-            <button class = "button sellbutton" type="button" onclick="sell()">Sell</button>
-            <button class = "button skipbutton" type="button" onclick="skip()">Skip</button>
+            <div class="buttons">
+                <button class = "buybutton" type="button" onclick="buy()">Buy</button>
+                <button class = "sellbutton" type="button" onclick="sell()">Sell</button>
+                <button class = "skipbutton" type="button" onclick="skip()">Skip</button>
+                <button class = "portfolioButton" type="button" onclick="portfolio()">Portfolio</button>
+            </div>
+
+            <form class = "selling" id="sellStock" action="/game/" method="post">
+                {% csrf_token %}
+                {{ selling }}
+                <input type="submit" value="Submit">
+            </form>
+
+            <form class = "buying" id="buyStock" action="/game/" method="post">
+                {% csrf_token %}
+                {{ buying }}
+                <input type="submit" value="Submit">
+            </form>
         </div>
-    
-        <form id="buyStock" action="/game/" method="post" style="position: absolute; right: 100; visibility: hidden;">
-            {% csrf_token %}
-            {{ buying }}
-            <input type="submit" value="Submit">
-        </form>
-    
-        <form id="sellStock" action="/game/" method="post" style="position: absolute; right: 100; visibility: hidden;">
-            {% csrf_token %}
-            {{ selling }}
-            <input type="submit" value="Submit">
-        </form>
     </div>
 </body>
 

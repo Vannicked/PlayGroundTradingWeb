@@ -49,6 +49,7 @@ a:visited {
 .pages {
     position: relative;
     font-size: 24px;
+    padding-bottom: 1%;
 }
 
 .homeScreen {
@@ -60,7 +61,15 @@ a:visited {
 }
 
 .marketScreen {
-    border: 10px 10px brown;
+    border: rgb(102, 49, 0);
+    border-width: 25px;
+    border-style: solid;
+    position: relative;
+    align-items: center;
+    background-color: #038819;
+    height: 75%;
+    width: 75%;
+    margin: auto;
 }
 
 button {
@@ -77,21 +86,43 @@ button {
 
 .buybutton {
     background-color: #038819;
+    position: relative;
+    z-index: 1;
 }
 
 .sellbutton {
     background-color: #CE2C2C;
+    position: relative;
+    z-index: 1;
 }
 
 .skipbutton {
     background-color: #FFA336;
+    position: relative;
+    z-index: 1;
+}
+
+.portfolioButton {
+    background-color: black;
+    position: relative;
+    z-index: 1;
 }
 
 .turnOptions {
-    text-align: left;
-    position: fixed;
-    bottom: 30;
+    margin: auto;
+    text-align: center;
+    position: relative;
+    bottom: 0;
 }
-  
 
-  
+.buying {
+    position: relative;
+    z-index: 2;
+    visibility: hidden;
+}
+
+.selling {
+    position: relative;
+    z-index: 2;
+    visibility: hidden;
+}

@@ -1,5 +1,6 @@
 function buy(){
     document.getElementById("buyStock").style.visibility = "visible";
+    document.getElementsByClassName("turnOptions").style.visibility = "hidden";
 }
 
 function sell(){
@@ -15,4 +16,8 @@ function skip(){
         text = "Please choose buy or sell";
     }
     console.log(text);
+}
+
+function portfolio(){
+
 }
