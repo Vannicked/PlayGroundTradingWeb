@@ -1,0 +1,103 @@
+{% load static %}
+
+<link rel="stylesheet" href = "{% static 'pages/style.css' %}">
+
+<div class = "pages">
+    <a href="/" class="homeScreen">Playground Trading</a>
+    <a href = "/game" style="margin-right: 2%; margin-left: 2%; text-align: right;">Game</a>
+    <a href = "/education" style="margin-right: 2%; margin-left: 2%; text-align: right;">Education</a>
+    <a href = "/about" style="margin-right: 2%; margin-left: 2%; text-align: right;">About Us</a>
+</div>
+
+<title> Quiz </title>
+    <style>
+        .accordion {
+            background-color: #f1f1f1;
+            color: #444;
+            cursor: pointer;
+            padding: 18px;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 15px;
+            transition: 0.4s;
+        }
+
+            .accordion:hover {
+                background-color: #ddd;
+            }
+
+        .active, .accordion:hover {
+            background-color: #ccc;
+        }
+
+        .accordion:after {
+            content: '\002B';
+            color: #777;
+            font-weight: bold;
+            float: right;
+            margin-left: 5px;
+        }
+
+            .active:after {
+                content: "\2212";
+            }
+
+        .panel {
+            padding: 0 18px;
+            display: none;
+            background-color:#038819;
+            overflow: hidden;
+        }
+    </style>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Quiz Example</title>
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Quiz Example</h1>
+    </header>
+
+    <main>
+        <section class="questions">
+            <h2>Questions</h2>
+            <!-- Insert quiz questions here -->
+            <p> What is 1 + 1? </p>
+            <button id="choice1">2</button><button id="choice2">3</button> 
+
+
+        </section>
+
+        <section class="results">
+            <h2>Results</h2>
+            <p>You got <span id="correct">0</span> out of <span id="total">1</span> correct!</p>
+            <button id="restart">Restart Quiz</button>
+        </section>
+    </main>
+
+    <script>
+        const choice1 = document.getElementById("choice1");
+        const choice2 = document.getElementById("choice2");
+        const correctSpan = document.getElementById("correct");
+        let x = 0;
+      
+        choice1.addEventListener("click", function() {
+          correctSpan.textContent = (x++); // Update correct answer if choice1 is clicked
+          // choice1.disabled = true; 
+        
+        });
+        
+      
+        choice2.addEventListener("click", function() {
+          correctSpan.textContent = (x--); // Update correct answer if choice2 is clicked
+          // choice2.disabled = true; 
+
+        });
+      </script>
+</body>
+</html>
