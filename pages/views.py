@@ -4,6 +4,8 @@ from django.http import HttpResponseRedirect
 from .forms import stockActions
 from .models import Portfolio
 
+import pandas as pd
+
 def home(request):
     return render(request, "pages/home.html", {})
 
@@ -34,7 +36,13 @@ def game(request):
             p.save()
         stockActionsForm = stockActions()
 
-    return render(request, "pages/game.html", {"stockActions": stockActions})
+    stockTable = pd.read_csv('pages/static/pages/StockPrices.csv')
+    shownMonths = 6
+    stockTableSection = stockTable[:shownMonths]
+    stockTableSection = stockTableSection.round(2)
+    stockTableHtml = stockTableSection.to_html()
+
+    return render(request, "pages/game.html", {"stockActions": stockActions, "stockTable": stockTableHtml})
 
 def education(request):
     return render(request, "pages/education.html", {})
