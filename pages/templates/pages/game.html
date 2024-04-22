@@ -27,19 +27,12 @@
             <button id = "skipbutton" type="button" onclick="skip()">Skip</button>
             <button id = "portfolioButton" type="button" onclick="portfolio()">Portfolio</button>
 
-            <div id="buying">
-                <form id="buyStock" style="display: none;" action="/game/" method="post">
+            <div id="stockActions">
+                <form id="stockActionsForm" style="display: none;" action="/game/" method="post">
                     {% csrf_token %}
-                    {{ buying }}
-                    <input type="submit" value="Submit">
-                </form>
-            </div>
-
-            <div id="selling">
-                <form id = "sellStock" style="display: none;" action="/game/" method="post">
-                    {% csrf_token %}
-                    {{ selling }}
-                    <input type="submit" value="Submit">
+                    {{ stockActions }}
+                    <input type="submit" id="buy_stock" name="buy_stock" value="Buy">
+                    <input type="submit" id = "sell_stock" name="sell_stock" value="Sell">
                 </form>
             </div>
         </div>
