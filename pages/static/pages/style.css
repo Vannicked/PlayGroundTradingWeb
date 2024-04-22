@@ -87,25 +87,21 @@ button {
 .buybutton {
     background-color: #038819;
     position: relative;
-    z-index: 1;
 }
 
 .sellbutton {
     background-color: #CE2C2C;
     position: relative;
-    z-index: 1;
 }
 
 .skipbutton {
     background-color: #FFA336;
     position: relative;
-    z-index: 1;
 }
 
 .portfolioButton {
     background-color: black;
     position: relative;
-    z-index: 1;
 }
 
 .turnOptions {
@@ -118,12 +114,10 @@ button {
 
 .buying {
     position: relative;
-    z-index: 2;
     visibility: hidden;
 }
 
 .selling {
     position: relative;
-    z-index: 2;
     visibility: hidden;
 }
