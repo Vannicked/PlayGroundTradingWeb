@@ -1,47 +1,47 @@
 <!-- pages/templates/pages/game.html -->
 {% load static %}
 
-<link rel="stylesheet" href = "{% static 'pages/style.css' %}">
-
 <head>
+    <title>Game</title>
+    <link rel="stylesheet" href = "{% static 'pages/style.css' %}">
     <script src="{% static 'pages/functions.js' %}"></script>
 </head>
 
 <body>
-    <div class = "pages">
-        <a href="/" class="homeScreen">Playground Trading</a>
+    <div id="pages">
+        <a href="/" id="homeScreen">Playground Trading</a>
         <a href = "/game" style="margin-right: 2%; margin-left: 2%; text-align: right;">Game</a>
         <a href = "/education" style="margin-right: 2%; margin-left: 2%; text-align: right;">Education</a>
         <a href = "/about" style="margin-right: 2%; margin-left: 2%; text-align: right;">About Us</a>
     </div>
     
-    <div class="game">
+    <div id="game">
     
-        <div class="marketScreen">
+        <div id="marketScreen">
             <p>Here is the display for current stocks</p>
         </div>
     
-        <div class="turnOptions">
-            <div class="buttons">
-                <div class="buying">
-                    <button class = "buybutton" type="button" onclick="buy()">Buy</button>
+        <div id="turnOptions">
+            <button id = "buybutton" type="button" onclick="buy()">Buy</button>
+            <button id = "sellbutton" type="button" onclick="sell()">Sell</button>
+            <button id = "skipbutton" type="button" onclick="skip()">Skip</button>
+            <button id = "portfolioButton" type="button" onclick="portfolio()">Portfolio</button>
 
-                    <form class = "buying" id="buyStock" action="/game/" method="post">
-                        {% csrf_token %}
-                        {{ buying }}
-                        <input type="submit" value="Submit">
-                    </form>
-                </div>
-                <button class = "sellbutton" type="button" onclick="sell()">Sell</button>
-                <button class = "skipbutton" type="button" onclick="skip()">Skip</button>
-                <button class = "portfolioButton" type="button" onclick="portfolio()">Portfolio</button>
+            <div id="buying">
+                <form id="buyStock" style="display: none;" action="/game/" method="post">
+                    {% csrf_token %}
+                    {{ buying }}
+                    <input type="submit" value="Submit">
+                </form>
             </div>
 
-            <form class = "selling" id="sellStock" action="/game/" method="post">
-                {% csrf_token %}
-                {{ selling }}
-                <input type="submit" value="Submit">
-            </form>
+            <div id="selling">
+                <form id = "sellStock" style="display: none;" action="/game/" method="post">
+                    {% csrf_token %}
+                    {{ selling }}
+                    <input type="submit" value="Submit">
+                </form>
+            </div>
         </div>
     </div>
 </body>

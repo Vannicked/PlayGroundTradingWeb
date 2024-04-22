@@ -1,11 +1,12 @@
 <!-- pages/templates/pages/about.html -->
 {% load static %}
-
-<link rel="stylesheet" href = "{% static 'pages/style.css' %}">
+<head>
+  <link rel="stylesheet" href = "{% static 'pages/style.css' %}">
+</head>
 
 <body>
     <div class = "pages">
-        <a href="/" class="homeScreen">Playground Trading</a>
+        <a href="/" id="homeScreen">Playground Trading</a>
         <a href = "/game" style="margin-right: 2%; margin-left: 2%; text-align: right;">Game</a>
         <a href = "/education" style="margin-right: 2%; margin-left: 2%; text-align: right;">Education</a>
         <a href = "/about" style="margin-right: 2%; margin-left: 2%; text-align: right;">About Us</a>
