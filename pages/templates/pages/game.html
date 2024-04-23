@@ -1,44 +1,83 @@
 <!-- pages/templates/pages/game.html -->
 {% load static %}
 
-<link rel="stylesheet" href = "{% static 'pages/style.css' %}">
-
 <head>
+    <title>Game</title>
+    <link rel="stylesheet" href = "{% static 'pages/style.css' %}">
     <script src="{% static 'pages/functions.js' %}"></script>
 </head>
 
 <body>
-    <div class = "pages">
-        <a href="/" class="homeScreen">Playground Trading</a>
+    <div id="pages">
+        <a href="/" id="homeScreen">Playground Trading</a>
         <a href = "/game" style="margin-right: 2%; margin-left: 2%; text-align: right;">Game</a>
         <a href = "/education" style="margin-right: 2%; margin-left: 2%; text-align: right;">Education</a>
         <a href = "/about" style="margin-right: 2%; margin-left: 2%; text-align: right;">About Us</a>
     </div>
     
-    <div class="game">
+    <div id="game">
     
-        <div class="marketScreen">
-            <p style="position: absolute; top: 150; right: 200; background-color: green; height: 600px; width: 1500px; border-color: brown; border: 10px;">Here is the display for current stocks</p>
+        <div id="marketScreen">
+            {{ stockTable | safe}}
+
+            <div id="playerPortfolio" style="visibility: visible; position: absolute; bottom: 0;">
+                <table border="1">
+                    <tr>
+                        <th>AAL Shares</th>
+                        <th>AAPL Shares</th>
+                        <th>AMZN Shares</th>
+                        <th>BAC Shares</th>
+                        <th>DAL Shares</th>
+                        <th>HMC Shares</th>
+                        <th>JNJ Shares</th>
+                        <th>JPM Shares</th>
+                        <th>LLY Shares</th>
+                        <th>LUV Shares</th>
+                        <th>MSFT Shares</th>
+                        <th>TM Shares</th>
+                        <th>TSLA Shares</th>
+                        <th>UNH Shares</th>
+                        <th>V Shares</th>
+                        <th>Value</th>
+                    </tr>
+                    {% for x in playerPortfolio %}
+                    <tr>
+                        <td>{{ x.aal }}</td>
+                        <td>{{ x.aapl }}</td>
+                        <td>{{ x.amzn }}</td>
+                        <td>{{ x.bac }}</td>
+                        <td>{{ x.dal }}</td>
+                        <td>{{ x.hmc }}</td>
+                        <td>{{ x.jnj }}</td>
+                        <td>{{ x.jpm }}</td>
+                        <td>{{ x.lly }}</td>
+                        <td>{{ x.luv }}</td>
+                        <td>{{ x.msft }}</td>
+                        <td>{{ x.tm }}</td>
+                        <td>{{ x.tsla }}</td>
+                        <td>{{ x.unh }}</td>
+                        <td>{{ x.v }}</td>
+                        <td>{{ x.totalValue }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
     
-        <div class="turnOptions">
-            <button class = "button buybutton" type="button" onclick="buy()">Buy</button>
-            <button class = "button sellbutton" type="button" onclick="sell()">Sell</button>
-            <button class = "button skipbutton" type="button" onclick="skip()">Skip</button>
+        <div id="turnOptions">
+            <button id = "buybutton" type="button" onclick="buy()">Buy</button>
+            <button id = "sellbutton" type="button" onclick="sell()">Sell</button>
+            <button id = "skipbutton" type="button" onclick="skip()">Skip</button>
+            <button id = "portfolioButton" type="button" onclick="portfolio()">Portfolio</button>
+
+            <div id="stockActions">
+                <form id="stockActionsForm" style="display: none;" action="/game/" method="post">
+                    {% csrf_token %}
+                    {{ stockActions }}
+                    <input type="submit" id="buy_stock" name="buy_stock" value="Buy">
+                    <input type="submit" id = "sell_stock" name="sell_stock" value="Sell">
+                </form>
+            </div>
         </div>
-    
-        <form id="buyStock" action="/game/" method="post" style="position: absolute; right: 100; visibility: hidden;">
-            {% csrf_token %}
-            {{ buying }}
-            <input type="submit" value="Submit">
-        </form>
-    
-        <form id="sellStock" action="/game/" method="post" style="position: absolute; right: 100; visibility: hidden;">
-            {% csrf_token %}
-            {{ selling }}
-            <input type="submit" value="Submit">
-        </form>
     </div>
 </body>
-
-
