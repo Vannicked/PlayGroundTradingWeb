@@ -17,6 +17,7 @@ class Portfolio(models.Model):
     tsla = models.IntegerField()
     unh = models.IntegerField()
     v = models.IntegerField()
+    totalValue = models.FloatField()
 
     def __str__(self):
-        return f"{self.aal - self.aapl - self.amzn - self.bac - self.dal - self.hmc - self.jnj - self.jpm - self.lly - self.luv - self.msft - self.tm - self.tsla - self.unh - self.v}"
+        return f"{self.aal - self.aapl - self.amzn - self.bac - self.dal - self.hmc - self.jnj - self.jpm - self.lly - self.luv - self.msft - self.tm - self.tsla - self.unh - self.v - self.totalValue}"

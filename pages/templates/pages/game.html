@@ -20,10 +20,9 @@
         <div id="marketScreen">
             {{ stockTable | safe}}
 
-            <div id="playerPortfolio" style="visibility: hidden;">
+            <div id="playerPortfolio" style="visibility: visible; position: absolute; bottom: 0;">
                 <table border="1">
                     <tr>
-                        <th>Player</th>
                         <th>AAL Shares</th>
                         <th>AAPL Shares</th>
                         <th>AMZN Shares</th>
@@ -39,10 +38,10 @@
                         <th>TSLA Shares</th>
                         <th>UNH Shares</th>
                         <th>V Shares</th>
+                        <th>Value</th>
                     </tr>
                     {% for x in playerPortfolio %}
                     <tr>
-                        <td>{{ x.index }}</td>
                         <td>{{ x.aal }}</td>
                         <td>{{ x.aapl }}</td>
                         <td>{{ x.amzn }}</td>
@@ -58,6 +57,7 @@
                         <td>{{ x.tsla }}</td>
                         <td>{{ x.unh }}</td>
                         <td>{{ x.v }}</td>
+                        <td>{{ x.totalValue }}</td>
                     </tr>
                     {% endfor %}
                 </table>

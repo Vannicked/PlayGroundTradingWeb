@@ -72,11 +72,6 @@ a:visited {
     margin: auto;
 }
 
-#playerPortfolio {
-    position: absolute;
-    bottom: 0;
-}
-
 button {
     border: none;
     color: white;
