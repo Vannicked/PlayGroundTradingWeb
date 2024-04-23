@@ -1,87 +1,86 @@
 {% load static %}
+<!DOCTYPE html>
 
-<link rel="stylesheet" href = "{% static 'pages/style.css' %}">
 
-<div class = "pages">
+<html>
+
+  <head>
+  <title>Quiz</title>
+  <link rel="stylesheet" href = "{% static 'pages/style.css' %}">
+  <style>
+    .container {
+      display: flex; /* Enable flexbox layout */
+      justify-content: center; /* Center elements along the X-axis */
+      font-size: 20px;
+    }
+    .restartButton {
+        background-color:#038819
+    }
+
+    .button-container {
+      display: flex; /* Enable flexbox layout for the container */
+      justify-content: center; /* Center elements along the X-axis within the container */
+    }
+
+    .myButton {
+      background-color: #F1C40F; /* Replace #yourColor with your desired color code */
+      color: #FFFFFF; /* Optional: Set text color if needed */
+    }
+
+    .myButton:disabled {
+      background-color: #D6DBDF; /* Replace #yourColor with your desired color code */
+      color: #FFFFFF; /* Optional: Set text color if needed */
+    }
+    .accordion {
+        background-color: #f1f1f1;
+        color: #444;
+        cursor: pointer;
+        padding: 18px;
+        width: 100%;
+        border: none;
+        text-align: left;
+        outline: none;
+        font-size: 15px;
+        transition: 0.4s;
+    }
+
+    .accordion:hover {
+      background-color: #ddd;
+    }
+
+    .active, .accordion:hover {
+        background-color: #ccc;
+    }
+
+    .accordion:after {
+      content: '\002B';
+      color: #777;
+      font-weight: bold;
+      float: right;
+      margin-left: 5px;
+    }
+
+    .active:after {
+      content: "\2212";
+    }
+
+    .panel {
+      padding: 0 18px;
+      display: none;
+      background-color:#038819;
+      overflow: hidden;
+    }
+  </style>
+</head>
+
+  <div id = "pages">
     <a href="/" class="homeScreen">Playground Trading</a>
     <a href = "/game" style="margin-right: 2%; margin-left: 2%; text-align: right;">Game</a>
     <a href = "/education" style="margin-right: 2%; margin-left: 2%; text-align: right;">Education</a>
     <a href = "/about" style="margin-right: 2%; margin-left: 2%; text-align: right;">About Us</a>
-</div>
+  </div>
 
-<title> Quiz </title>
-    <style>
-        .container {
-  display: flex; /* Enable flexbox layout */
-  justify-content: center; /* Center elements along the X-axis */
-  font-size: 20px;
-}
-        .restartButton {
-            background-color:#038819
-        }
-
-        .button-container {
-  display: flex; /* Enable flexbox layout for the container */
-  justify-content: center; /* Center elements along the X-axis within the container */
-}
-
-        .myButton {
-    background-color: #F1C40F; /* Replace #yourColor with your desired color code */
-    color: #FFFFFF; /* Optional: Set text color if needed */
-}
-
-        .myButton:disabled {
-    background-color: #D6DBDF; /* Replace #yourColor with your desired color code */
-    color: #FFFFFF; /* Optional: Set text color if needed */
-}
-        .accordion {
-            background-color: #f1f1f1;
-            color: #444;
-            cursor: pointer;
-            padding: 18px;
-            width: 100%;
-            border: none;
-            text-align: left;
-            outline: none;
-            font-size: 15px;
-            transition: 0.4s;
-        }
-
-            .accordion:hover {
-                background-color: #ddd;
-            }
-
-        .active, .accordion:hover {
-            background-color: #ccc;
-        }
-
-        .accordion:after {
-            content: '\002B';
-            color: #777;
-            font-weight: bold;
-            float: right;
-            margin-left: 5px;
-        }
-
-            .active:after {
-                content: "\2212";
-            }
-
-        .panel {
-            padding: 0 18px;
-            display: none;
-            background-color:#038819;
-            overflow: hidden;
-        }
-    </style>
-
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Quiz</title>
-    <link rel="stylesheet" type="text/css" href="styles.css">
-</head>
-<body>
+  <body>
     <header>
         <h1>Quiz</h1>
     </header>
@@ -148,90 +147,72 @@
           correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
           this.disabled = true;
           choice1A.disabled = true;
-
-
         });
         
       
         choice1A.addEventListener("click", function() {
           this.disabled = true;
           choice1B.disabled = true;
-
         });
 
         choice2A.addEventListener("click", function() {
           correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
           this.disabled = true;
           choice2B.disabled = true;
-
-
         });
         
       
         choice2B.addEventListener("click", function() {
           this.disabled = true;
           choice2A.disabled = true;
-
         });
 
         choice3A.addEventListener("click", function() {
           correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
           this.disabled = true;
           choice3B.disabled = true;
-
-
         });
         
       
         choice3B.addEventListener("click", function() {
           this.disabled = true;
           choice3A.disabled = true;
-
         });
 
         choice4B.addEventListener("click", function() {
           correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
           this.disabled = true;
           choice4A.disabled = true;
-
-
         });
         
       
         choice4A.addEventListener("click", function() {
           this.disabled = true;
           choice4B.disabled = true;
-
         });
 
         choice5A.addEventListener("click", function() {
           correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
           this.disabled = true;
           choice5B.disabled = true;
-
-
         });
         
       
         choice5B.addEventListener("click", function() {
           this.disabled = true;
           choice5A.disabled = true;
-
         });
 
         choice6B.addEventListener("click", function() {
           correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
           this.disabled = true;
           choice6A.disabled = true;
-
-
         });
         
       
         choice6A.addEventListener("click", function() {
           this.disabled = true;
           choice6B.disabled = true;
-
         });
 
 
@@ -250,8 +231,7 @@
             choice6B.disabled = false;
             quizTotal = 0;
             correctSpan.textContent = quizTotal;
-
         })
       </script>
-</body>
+  </body>
 </html>
