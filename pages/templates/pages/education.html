@@ -12,12 +12,23 @@
 
 <title> Education </title>
     <style>
+
+        .container {
+          display: flex; /* Enable flexbox layout */
+          justify-content: center; /* Center elements along the X-axis */
+          font-size: 20px;
+}
+        .button-container {
+          display: flex; /* Enable flexbox layout for the container */
+          justify-content: center; /* Center elements along the X-axis within the container */
+}
+
         .accordion {
             background-color: #f1f1f1;
             color: #444;
             cursor: pointer;
             padding: 18px;
-            width: 100%;
+            width: 30%;
             border: none;
             text-align: left;
             outline: none;
@@ -37,6 +48,7 @@
             content: '\002B';
             color: #777;
             font-weight: bold;
+            width: 30%;
             float: right;
             margin-left: 5px;
         }
@@ -48,6 +60,7 @@
         .panel {
             padding: 0 18px;
             display: none;
+            width: 12%;
             background-color:#038819;
             overflow: hidden;
         }
@@ -82,44 +95,63 @@
 
 <body>
     <h1>Get Educated </h1>
+
+    <div class="button-container">
     <button class="accordion">Stocks (Equities)</button>
     <div class="panel">
         <p> Stocks are like owning a tiny piece of a company. When you buy a stock, you become a partial owner, and you might get some money back if the company does well.</p>
     </div>
-
+  </div>
+  
+  <div class="button-container">
     <button class="accordion">Bonds</button>
     <div class="panel">
         <p>Bonds are a bit like lending money. When you buy a bond, you're giving a loan to a company or a government. They promise to pay you back the loan amount (principal) with a little extra (interest) over time.</p>
     </div>
+  </div>
 
+  <div class="button-container">
     <button class="accordion">ETFs (Exchange-Traded Funds)</button>
     <div class="panel">
         <p>ETFs are like a collection of different things, such as stocks or bonds, bundled together. It's like buying a variety pack that helps you invest in many things at once.</p>
     </div>
+  </div>
 
+  <div class="button-container">
     <button class="accordion">Mutual Funds</button>
     <div class="panel">
         <p>Mutual funds are a way for many people to put their money together to invest in lots of different things, like stocks and bonds. Professionals manage these funds to help them grow.</p>
     </div>
+  </div>
 
+  <div class="button-container">
     <button class="accordion">Futures</button>
     <div class="panel">
         <p>Futures are like making a deal today to buy or sell something in the future at a set price. It's a bit like agreeing to buy a video game when it comes out, but at today's price.</p>
     </div>
+  </div>
 
+  <div class="button-container">
     <button class="accordion">Options</button>
     <div class="panel">
         <p> Options are a bit like having a special ticket that lets you choose to buy or sell something in the future. It's a choice, not a must-do. It's like getting the option to buy a concert ticket later if you decide you want it.</p>
     </div>
+  </div>
 
+  <div class="button-container">
     <button class="accordion">Trading Vs Investing</button>
     <div class="panel">
         <p> Trading is like buying and selling concert tickets quickly for short-term profit. Investing is like buying a season pass for a concert series, aiming for long-term growth.</p>
     </div>
+  </div>
 
+  <div class="button-container">
+    <div class="button-container">
     <a href = "/quiz">
       <button style="width: 200px; height: 60px; background-color: #038819; color: white">Take A Quiz</button>
     </a>
+  </div>
+  </div>
 
     <script>
         // Get all elements with class "accordion"
@@ -202,6 +234,8 @@
     
         #image-container {
           overflow: hidden; /* Hide  content for multiple boxes */
+          display: flex; /* Enable flexbox layout */
+          justify-content: center; /* Center elements along the X-axis */
         }
     
         #image-slider {
