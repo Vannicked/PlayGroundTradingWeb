@@ -11,6 +11,29 @@
 
 <title> Quiz </title>
     <style>
+        .container {
+  display: flex; /* Enable flexbox layout */
+  justify-content: center; /* Center elements along the X-axis */
+  font-size: 20px;
+}
+        .restartButton {
+            background-color:#038819
+        }
+
+        .button-container {
+  display: flex; /* Enable flexbox layout for the container */
+  justify-content: center; /* Center elements along the X-axis within the container */
+}
+
+        .myButton {
+    background-color: #F1C40F; /* Replace #yourColor with your desired color code */
+    color: #FFFFFF; /* Optional: Set text color if needed */
+}
+
+        .myButton:disabled {
+    background-color: #D6DBDF; /* Replace #yourColor with your desired color code */
+    color: #FFFFFF; /* Optional: Set text color if needed */
+}
         .accordion {
             background-color: #f1f1f1;
             color: #444;
@@ -55,49 +78,180 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Quiz Example</title>
+    <title>Quiz</title>
     <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
 <body>
     <header>
-        <h1>Quiz Example</h1>
+        <h1>Quiz</h1>
     </header>
-
     <main>
         <section class="questions">
-            <h2>Questions</h2>
-            <!-- Insert quiz questions here -->
-            <p> What is 1 + 1? </p>
-            <button id="choice1">2</button><button id="choice2">3</button> 
 
+            <p class="container"> Which investment strategy typically aims for higher returns with the potential for higher risk? </p>
+            <div class="button-container">
+                <button id="choice1A" class="myButton"> Value Investing </button><button id="choice1B" class="myButton"> Growth Investing </button>
+            </div>
+
+            <p class="container"> When a stock price goes up, a call option contract becomes </p>
+            <div class="button-container">
+                <button id="choice2A" class="myButton"> More valuable </button><button id="choice2B" class="myButton"> Less valuable </button>
+            </div>
+
+            <p class="container"> A bull market is generally characterized by </p>
+            <div class="button-container">
+                <button id="choice3A" class="myButton"> Rising stock prices </button><button id="choice3B" class="myButton"> Falling stock prices </button>
+            </div>
+
+            <p class="container"> Companies pay out dividends to </p>
+            <div class="button-container">
+                <button id="choice4A" class="myButton"> Employees </button> <button id="choice4B" class="myButton"> Shareholders </button>
+            </div>
+
+            <p class="container"> Which of these is a common metric used to value stocks? </p>
+            <div class="button-container">
+                <button id="choice5A" class="myButton"> Price-to-earnings ratio (P/E Ratio) </button><button id="choice5B" class="myButton"> Click-through rate (CTR) </button>
+            </div>
+
+            <p class="container"> When you short sell a stock, you are essentially betting that </p>
+            <div class="button-container">
+                <button id="choice6A" class="myButton"> The price will go up </button><button id="choice6B" class="myButton"> The price will go down </button>
+            </div>
 
         </section>
 
         <section class="results">
             <h2>Results</h2>
-            <p>You got <span id="correct">0</span> out of <span id="total">1</span> correct!</p>
-            <button id="restart">Restart Quiz</button>
+            <p>You got <span id="correct"> 0 </span> out of <span id="total"> 6 </span> correct!</p>
+            <button id="restart" class = "restartButton">Restart Quiz</button>
         </section>
     </main>
 
     <script>
-        const choice1 = document.getElementById("choice1");
-        const choice2 = document.getElementById("choice2");
+        const choice1A = document.getElementById("choice1A");
+        const choice1B = document.getElementById("choice1B");
+        const choice2A = document.getElementById("choice2A");
+        const choice2B = document.getElementById("choice2B");
+        const choice3A = document.getElementById("choice3A");
+        const choice3B = document.getElementById("choice3B");
+        const choice4A = document.getElementById("choice4A");
+        const choice4B = document.getElementById("choice4B");
+        const choice5A = document.getElementById("choice5A");
+        const choice5B = document.getElementById("choice5B");
+        const choice6A = document.getElementById("choice6A");
+        const choice6B = document.getElementById("choice6B");
         const correctSpan = document.getElementById("correct");
-        let x = 0;
+        const restartQuiz = document.getElementById("restart");
+        let quizTotal = 0;
       
-        choice1.addEventListener("click", function() {
-          correctSpan.textContent = (x++); // Update correct answer if choice1 is clicked
-          // choice1.disabled = true; 
-        
-        });
-        
-      
-        choice2.addEventListener("click", function() {
-          correctSpan.textContent = (x--); // Update correct answer if choice2 is clicked
-          // choice2.disabled = true; 
+        choice1B.addEventListener("click", function() {
+          correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
+          this.disabled = true;
+          choice1A.disabled = true;
+
 
         });
+        
+      
+        choice1A.addEventListener("click", function() {
+          this.disabled = true;
+          choice1B.disabled = true;
+
+        });
+
+        choice2A.addEventListener("click", function() {
+          correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
+          this.disabled = true;
+          choice2B.disabled = true;
+
+
+        });
+        
+      
+        choice2B.addEventListener("click", function() {
+          this.disabled = true;
+          choice2A.disabled = true;
+
+        });
+
+        choice3A.addEventListener("click", function() {
+          correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
+          this.disabled = true;
+          choice3B.disabled = true;
+
+
+        });
+        
+      
+        choice3B.addEventListener("click", function() {
+          this.disabled = true;
+          choice3A.disabled = true;
+
+        });
+
+        choice4B.addEventListener("click", function() {
+          correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
+          this.disabled = true;
+          choice4A.disabled = true;
+
+
+        });
+        
+      
+        choice4A.addEventListener("click", function() {
+          this.disabled = true;
+          choice4B.disabled = true;
+
+        });
+
+        choice5A.addEventListener("click", function() {
+          correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
+          this.disabled = true;
+          choice5B.disabled = true;
+
+
+        });
+        
+      
+        choice5B.addEventListener("click", function() {
+          this.disabled = true;
+          choice5A.disabled = true;
+
+        });
+
+        choice6B.addEventListener("click", function() {
+          correctSpan.textContent = (++quizTotal); // Update correct answer if choice1A is clicked
+          this.disabled = true;
+          choice6A.disabled = true;
+
+
+        });
+        
+      
+        choice6A.addEventListener("click", function() {
+          this.disabled = true;
+          choice6B.disabled = true;
+
+        });
+
+
+        restartQuiz.addEventListener("click", function() {
+            choice1A.disabled = false;
+            choice1B.disabled = false;
+            choice2A.disabled = false;
+            choice2B.disabled = false;
+            choice3A.disabled = false;
+            choice3B.disabled = false;
+            choice4A.disabled = false;
+            choice4B.disabled = false;
+            choice5A.disabled = false;
+            choice5B.disabled = false;
+            choice6A.disabled = false;
+            choice6B.disabled = false;
+            quizTotal = 0;
+            correctSpan.textContent = quizTotal;
+
+        })
       </script>
 </body>
 </html>

@@ -1,22 +1,14 @@
-<!-- pages/templates/pages/about.html -->
 {% load static %}
 
 <link rel="stylesheet" href = "{% static 'pages/style.css' %}">
 
-<body>
-    <div class = "pages">
-        <a href="/" class="homeScreen">Playground Trading</a>
-        <a href = "/game" style="margin-right: 2%; margin-left: 2%; text-align: right;">Game</a>
-        <a href = "/education" style="margin-right: 2%; margin-left: 2%; text-align: right;">Education</a>
-        <a href = "/about" style="margin-right: 2%; margin-left: 2%; text-align: right;">About Us</a>
-    </div>
-
-    <div class="content">
-    
-    </div>
-</body>
-        <a href="/" style="font-size: 72px; text-align: center; padding-right: 525px;">Playground Trading</a>
+<div class = "pages">
+    <a href="/" class="homeScreen">Playground Trading</a>
+    <a href = "/game" style="margin-right: 2%; margin-left: 2%; text-align: right;">Game</a>
+    <a href = "/education" style="margin-right: 2%; margin-left: 2%; text-align: right;">Education</a>
+    <a href = "/about" style="margin-right: 2%; margin-left: 2%; text-align: right;">About Us</a>
 </div>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,7 +17,6 @@
 
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
       padding: 20px;
     }
@@ -46,6 +37,7 @@
     .team-member img {
       width: 150px;
       height: 150px;
+      object-fit: cover;
       border-radius: 50%;
       margin-bottom: 10px;
     }
@@ -83,33 +75,24 @@
   </style>
 </head>
 <body>
-    <br>
-    <br>
-    <br>
 
   <h1>The Grade Gamblers</h1>
 
   <div class="about-us">
     <div class="team-member">
-      <img src="path/to/member1/photo1.jpg" alt="Nick Johnson">
-      <img src="path/to/member1/photo2.jpg" alt="Nick Johnson">
-      <img src="path/to/member1/photo3.jpg" alt="Nick Johnson">
+      <img src="/static/pages/nick.JPG" alt="Nick Johnson">
       <h3>Nick Johnson</h3>
       <p> Junior CS & Film Major  </p>
     </div>
 
     <div class="team-member">
-      <img src="path/to/member2/photo1.jpg" alt="Aidan Keefe">
-      <img src="path/to/member2/photo2.jpg" alt="Aidan Keefe">
-      <img src="path/to/member2/photo3.jpg" alt="Aidan Keefe">
+      <img src="/static/pages/aidan.jpeg" alt="Aidan Keefe">
       <h3>Aidan Keefe</h3>
       <p> Senior Physcogogy Major & CS Minor </p>
     </div>
 
     <div class="team-member">
       <img src="path/to/member3/photo1.jpg" alt="Prustide Bangandozou">
-      <img src="path/to/member3/photo2.jpg" alt="Prustide Bangandozou">
-      <img src="path/to/member3/photo3.jpg" alt="Prustide Bangandozou">
       <h3>Prustide Bangandozou</h3>
       <p> Sophmore CS and Finance Major</p>
     </div>
