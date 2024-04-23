@@ -44,5 +44,10 @@ function skip(){
 }
 
 function portfolio(){
-
+    if (document.getElementById("playerPortfolio").style.visibility == "hidden"){
+        document.getElementById("playerPortfolio").style.visibility = "visible";
+    }
+    else{
+        document.getElementById("playerPortfolio").style.visibility = "hidden";
+    }
 }

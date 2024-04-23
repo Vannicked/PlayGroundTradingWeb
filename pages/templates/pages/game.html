@@ -19,6 +19,49 @@
     
         <div id="marketScreen">
             {{ stockTable | safe}}
+
+            <div id="playerPortfolio" style="visibility: hidden;">
+                <table border="1">
+                    <tr>
+                        <th>Player</th>
+                        <th>AAL Shares</th>
+                        <th>AAPL Shares</th>
+                        <th>AMZN Shares</th>
+                        <th>BAC Shares</th>
+                        <th>DAL Shares</th>
+                        <th>HMC Shares</th>
+                        <th>JNJ Shares</th>
+                        <th>JPM Shares</th>
+                        <th>LLY Shares</th>
+                        <th>LUV Shares</th>
+                        <th>MSFT Shares</th>
+                        <th>TM Shares</th>
+                        <th>TSLA Shares</th>
+                        <th>UNH Shares</th>
+                        <th>V Shares</th>
+                    </tr>
+                    {% for x in playerPortfolio %}
+                    <tr>
+                        <td>{{ x.index }}</td>
+                        <td>{{ x.aal }}</td>
+                        <td>{{ x.aapl }}</td>
+                        <td>{{ x.amzn }}</td>
+                        <td>{{ x.bac }}</td>
+                        <td>{{ x.dal }}</td>
+                        <td>{{ x.hmc }}</td>
+                        <td>{{ x.jnj }}</td>
+                        <td>{{ x.jpm }}</td>
+                        <td>{{ x.lly }}</td>
+                        <td>{{ x.luv }}</td>
+                        <td>{{ x.msft }}</td>
+                        <td>{{ x.tm }}</td>
+                        <td>{{ x.tsla }}</td>
+                        <td>{{ x.unh }}</td>
+                        <td>{{ x.v }}</td>
+                    </tr>
+                    {% endfor %}
+                </table>
+            </div>
         </div>
     
         <div id="turnOptions">
