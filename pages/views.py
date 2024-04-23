@@ -27,3 +27,6 @@ def education(request):
 
 def about(request):
     return render(request, "pages/about.html", {})
+
+def quiz(request):
+    return render(request, "pages/quiz.html", {})
